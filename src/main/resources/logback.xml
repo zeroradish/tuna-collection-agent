@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <appender name="STDOUT"
+              class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{yyyyMMdd HH:mm:ss.SSS} [%thread] %-3level %logger - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+
+    <logger name="org.springframework" level="ERROR" additivity="false">
+        <appender-ref ref="STDOUT" />
+    </logger>
+
+    <logger name="jdbc.sqlonly" level="DEBUG" additivity="false">
+        <appender-ref ref="STDOUT" />
+    </logger>
+
+    <logger name="jdbc.sqltiming" level="DEBUG" additivity="false">
+        <appender-ref ref="STDOUT" />
+    </logger>
+
+    <logger name="org.springframework.web" level="ERROR"
+            additivity="false">
+        <appender-ref ref="STDOUT" />
+    </logger>
+
+    <logger name="org.hibernate" level="INFO" additivity="false">
+        <appender-ref ref="STDOUT" />
+    </logger>
+
+
+    <logger name="jdbc.resultsettable" level="INFO"
+            additivity="false">
+        <appender-ref ref="STDOUT" />
+    </logger>
+
+    <root level="DEBUG">
+        <appender-ref ref="STDOUT" />
+    </root>
+</configuration>
